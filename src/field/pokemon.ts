@@ -180,7 +180,6 @@ import { getEnumValues } from "#utils/enums";
 import { getFusedSpeciesName, getPokemonSpecies, getPokemonSpeciesForm } from "#utils/pokemon-utils";
 import { inSpeedOrder } from "#utils/speed-order-generator";
 import { argbFromRgba, QuantizerCelebi, rgbaFromArgb } from "@material/material-color-utilities";
-import { randomInt } from "crypto";
 import i18next from "i18next";
 import Phaser from "phaser";
 import SoundFade from "phaser3-rex-plugins/plugins/soundfade";
@@ -5974,7 +5973,10 @@ export class PlayerPokemon extends Pokemon {
       sd.friendship = (sd.friendship || 0) + candyFriendshipAmount;
       const friendshipCap = getStarterValueFriendshipCap(speciesStarterCosts[id]);
       if (sd.friendship >= friendshipCap) {
-        globalScene.gameData.addStarterCandy(getPokemonSpecies(id), Math.floor(sd.friendship / friendshipCap) + Math.floor(Math.random() * 4));
+        globalScene.gameData.addStarterCandy(
+          getPokemonSpecies(id),
+          Math.floor(sd.friendship / friendshipCap) + Math.floor(Math.random() * 4),
+        );
         sd.friendship %= friendshipCap;
       }
     });

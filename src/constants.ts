@@ -24,7 +24,11 @@ export const TYPE_BOOST_ITEM_BOOST_PERCENT = 20;
  * The default species that a new player can choose from
  */
 export const defaultStarterSpecies: readonly SpeciesId[] = [
-  SpeciesId.BULBASAUR,
+  SpeciesId.POPPLIO,
+  SpeciesId.NOIBAT,
+  SpeciesId.DHELMISE,
+  SpeciesId.CHESPIN,
+  SpeciesId.COBALION,
 ];
 
 export const saveKey = "x0i2O7WRiANTqPmZ"; // Temporary; secure encryption is not yet necessary

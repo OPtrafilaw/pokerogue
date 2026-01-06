@@ -2301,13 +2301,15 @@ export class StarterSelectUiHandler extends MessageUiHandler {
                     starterData.candyCount = persistentStarterData.candyCount;
                   }
                   this.pokemonCandyCountText.setText(`×${starterData.candyCount}`);
+                  while(persistentStarterData.candyCount >= sameSpeciesEggCost){
+                    const egg = new Egg({
+                      species: this.lastSpecies.speciesId,
+                      sourceType: EggSourceType.SAME_SPECIES_EGG,
+                    });
+                    egg.addEggToGameData();
 
-                  const egg = new Egg({
-                    species: this.lastSpecies.speciesId,
-                    sourceType: EggSourceType.SAME_SPECIES_EGG,
-                  });
-                  egg.addEggToGameData();
-
+                    persistentStarterData.candyCount -= sameSpeciesEggCost;
+                  }
                   globalScene.gameData.saveSystem().then(success => {
                     if (!success) {
                       return globalScene.reset(true);

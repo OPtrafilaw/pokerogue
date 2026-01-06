@@ -8,8 +8,6 @@ import {
   EGG_PITY_LEGENDARY_THRESHOLD,
   EGG_PITY_RARE_THRESHOLD,
   GACHA_DEFAULT_COMMON_EGG_THRESHOLD,
-  GACHA_DEFAULT_EPIC_EGG_THRESHOLD,
-  GACHA_DEFAULT_RARE_EGG_THRESHOLD,
   GACHA_DEFAULT_SHINY_RATE,
   GACHA_EGG_HA_RATE,
   GACHA_LEGENDARY_UP_THRESHOLD_OFFSET,
@@ -382,7 +380,7 @@ export class Egg {
         return HATCH_WAVES_COMMON_EGG;
       case EggTier.COMMON:
         return HATCH_WAVES_RARE_EGG;
-      case EggTier.COMMONmm:
+      case EggTier.COMMON:
         return HATCH_WAVES_EPIC_EGG;
     }
     return HATCH_WAVES_LEGENDARY_EGG;
@@ -556,14 +554,17 @@ export class Egg {
     globalScene.gameData.eggPity[EggTier.COMMAN] += 1;
     globalScene.gameData.eggPity[EggTier.COMMAN] += 1 + tierValueOffset;
     // These numbers are roughly the 80% mark. That is, 80% of the time you'll get an egg before this gets triggered.
-    if (
-      globalScene.gameData.eggPity[EggTier.COMMAN] >= EGG_PITY_LEGENDARY_THRESHOLD
+    if (globalScene.gameData.eggPity[EggTier.COMMAN] >= EGG_PITY_LEGENDARY_THRESHOLD && this._tier === EggTier.COMMON) {
+      this._tier = EggTier.COMMAN;
+    } else if (
+      globalScene.gameData.eggPity[EggTier.COMMAN] >= EGG_PITY_EPIC_THRESHOLD
       && this._tier === EggTier.COMMON
     ) {
       this._tier = EggTier.COMMAN;
-    } else if (globalScene.gameData.eggPity[EggTier.COMMAN] >= EGG_PITY_EPIC_THRESHOLD && this._tier === EggTier.COMMON) {
-      this._tier = EggTier.COMMAN;
-    } else if (globalScene.gameData.eggPity[EggTier.COMMAN] >= EGG_PITY_RARE_THRESHOLD && this._tier === EggTier.COMMON) {
+    } else if (
+      globalScene.gameData.eggPity[EggTier.COMMAN] >= EGG_PITY_RARE_THRESHOLD
+      && this._tier === EggTier.COMMON
+    ) {
       this._tier = EggTier.COMMAN;
     }
     globalScene.gameData.eggPity[this._tier] = 0;
