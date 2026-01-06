@@ -1,6 +1,6 @@
 import { SpeciesId } from "#enums/species-id";
 
-export const POKERUS_STARTER_COUNT = 5;
+export const POKERUS_STARTER_COUNT = 25;
 
 // #region Friendship constants
 export const CLASSIC_CANDY_FRIENDSHIP_MULTIPLIER = 3;
@@ -19,24 +19,25 @@ export const TRAINER_MIN_FRIENDSHIP = 50;
 export function getStarterValueFriendshipCap(starterCost: number): number {
   switch (starterCost) {
     case 1:
-      return 25;
+      return 10;
     case 2:
-      return 50;
+      return 10;
     case 3:
-      return 75;
+      return 10;
     case 4:
-      return 100;
+      return 10;
     case 5:
-      return 150;
+      return 10;
     case 6:
-      return 200;
+      return 10;
     case 7:
-      return 300;
+      return 10;
     case 8:
+      return 10;
     case 9:
-      return 450;
+      return 10;
     default:
-      return 600;
+      return 10;
   }
 }
 
@@ -633,16 +634,16 @@ interface StarterCandyCosts {
 }
 
 const allStarterCandyCosts: readonly StarterCandyCosts[] = [
-  { passive: 40, costReduction: [25, 60], eggCosts: [30, 27, 22, 15], eggCostReductionThresholds: [20, 40, 80] }, // 1 Cost
-  { passive: 40, costReduction: [25, 60], eggCosts: [30, 27, 22, 15], eggCostReductionThresholds: [20, 40, 80] }, // 2 Cost
-  { passive: 35, costReduction: [20, 50], eggCosts: [25, 22, 18, 12], eggCostReductionThresholds: [20, 40, 80] }, // 3 Cost
-  { passive: 30, costReduction: [15, 40], eggCosts: [20, 18, 15, 10], eggCostReductionThresholds: [15, 30, 60] }, // 4 Cost
-  { passive: 25, costReduction: [12, 35], eggCosts: [18, 16, 13, 9], eggCostReductionThresholds: [15, 30, 60] }, // 5 Cost
-  { passive: 20, costReduction: [10, 30], eggCosts: [15, 13, 11, 7], eggCostReductionThresholds: [15, 30, 60] }, // 6 Cost
+  { passive: 40, costReduction: [25, 60], eggCosts: [10, 27, 22, 15], eggCostReductionThresholds: [20, 40, 80] }, // 1 Cost
+  { passive: 40, costReduction: [25, 60], eggCosts: [10, 27, 22, 15], eggCostReductionThresholds: [20, 40, 80] }, // 2 Cost
+  { passive: 35, costReduction: [20, 50], eggCosts: [10, 22, 18, 12], eggCostReductionThresholds: [20, 40, 80] }, // 3 Cost
+  { passive: 30, costReduction: [15, 40], eggCosts: [12, 18, 15, 10], eggCostReductionThresholds: [15, 30, 60] }, // 4 Cost
+  { passive: 25, costReduction: [12, 35], eggCosts: [12, 16, 13, 9], eggCostReductionThresholds: [15, 30, 60] }, // 5 Cost
+  { passive: 20, costReduction: [10, 30], eggCosts: [12, 13, 11, 7], eggCostReductionThresholds: [15, 30, 60] }, // 6 Cost
   { passive: 15, costReduction: [8, 20], eggCosts: [12, 10, 9, 6], eggCostReductionThresholds: [10, 20, 40] }, // 7 Cost
-  { passive: 10, costReduction: [5, 15], eggCosts: [10, 9, 7, 5], eggCostReductionThresholds: [10, 20, 40] }, // 8 Cost
-  { passive: 10, costReduction: [5, 15], eggCosts: [10, 9, 7, 5], eggCostReductionThresholds: [10, 20, 40] }, // 9 Cost
-  { passive: 10, costReduction: [5, 15], eggCosts: [10, 9, 7, 5], eggCostReductionThresholds: [8, 16, 32] }, // 10 Cost
+  { passive: 10, costReduction: [5, 15], eggCosts: [15, 9, 7, 5], eggCostReductionThresholds: [10, 20, 40] }, // 8 Cost
+  { passive: 10, costReduction: [5, 15], eggCosts: [15, 9, 7, 5], eggCostReductionThresholds: [10, 20, 40] }, // 9 Cost
+  { passive: 10, costReduction: [5, 15], eggCosts: [15, 9, 7, 5], eggCostReductionThresholds: [8, 16, 32] }, // 10 Cost
 ];
 
 /**

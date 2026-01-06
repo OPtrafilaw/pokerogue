@@ -25,32 +25,6 @@ export const TYPE_BOOST_ITEM_BOOST_PERCENT = 20;
  */
 export const defaultStarterSpecies: readonly SpeciesId[] = [
   SpeciesId.BULBASAUR,
-  SpeciesId.CHARMANDER,
-  SpeciesId.SQUIRTLE,
-  SpeciesId.CHIKORITA,
-  SpeciesId.CYNDAQUIL,
-  SpeciesId.TOTODILE,
-  SpeciesId.TREECKO,
-  SpeciesId.TORCHIC,
-  SpeciesId.MUDKIP,
-  SpeciesId.TURTWIG,
-  SpeciesId.CHIMCHAR,
-  SpeciesId.PIPLUP,
-  SpeciesId.SNIVY,
-  SpeciesId.TEPIG,
-  SpeciesId.OSHAWOTT,
-  SpeciesId.CHESPIN,
-  SpeciesId.FENNEKIN,
-  SpeciesId.FROAKIE,
-  SpeciesId.ROWLET,
-  SpeciesId.LITTEN,
-  SpeciesId.POPPLIO,
-  SpeciesId.GROOKEY,
-  SpeciesId.SCORBUNNY,
-  SpeciesId.SOBBLE,
-  SpeciesId.SPRIGATITO,
-  SpeciesId.FUECOCO,
-  SpeciesId.QUAXLY,
 ];
 
 export const saveKey = "x0i2O7WRiANTqPmZ"; // Temporary; secure encryption is not yet necessary
